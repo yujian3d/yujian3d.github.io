@@ -1,0 +1,138 @@
+/* ===== 0. 成员名称样式（替代废弃的 font 标签）===== */
+.member-name {
+  font-size: 1.35em;
+  font-weight: 600;
+}
+
+/* ===== 1. PC端加宽内容区域，减少两侧空白 ===== */
+.layout {
+  max-width: 1800px;
+}
+
+@media screen and (min-width: 2000px) {
+  .layout {
+    max-width: 65%;
+  }
+}
+
+/* 隐藏aside时也相应加宽 */
+.layout.hide-aside {
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 2000px) {
+  .layout.hide-aside {
+    max-width: 1500px;
+  }
+}
+
+/* 导航栏和页脚也同步加宽 */
+#nav .back-menu-list-wrap,
+#footer-wrap > .layout_post {
+  max-width: 1400px;
+}
+
+/* ===== 2. 修复 flink 友链卡片下方大量空白 ===== */
+.flink .flink-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
+  padding: 10px 10px 0;
+}
+
+.flink .flink-list > .flink-list-item {
+  float: none;
+  margin: 8px 7px;
+}
+
+/* 减少分类名称下方间距 */
+.flink .flink-name {
+  margin-bottom: 2px;
+}
+
+/* 减少整个 flink 块之间的间距 */
+.flink .flink {
+  margin-bottom: 10px;
+}
+
+/* ===== 3. 文章卡片悬浮效果 ===== */
+#recent-posts > .recent-post-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#recent-posts > .recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(91, 134, 229, 0.15);
+}
+
+/* ===== 4. 侧边栏卡片微动效 ===== */
+.card-widget {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 5. 友链卡片悬浮效果 ===== */
+.flink .flink-list-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.flink .flink-list-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(91, 134, 229, 0.18);
+}
+
+/* ===== 6. 文章内图片圆角 + 阴影 ===== */
+#article-container img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 7. 代码块圆角增强 ===== */
+#article-container figure.highlight,
+#article-container pre {
+  border-radius: 10px;
+}
+
+/* ===== 8. 标签云悬浮效果 ===== */
+.card-tags a {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.card-tags a:hover {
+  transform: scale(1.1);
+}
+
+/* ===== 9. 滚动条美化 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5b86e5, #7c5ce7);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== 10. 页脚渐变分隔线 ===== */
+#footer::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5b86e5, #7c5ce7, transparent);
+  margin-bottom: 20px;
+}
+
+/* ===== 11. 文章标题悬浮渐变效果 ===== */
+#recent-posts .recent-post-info .article-title {
+  transition: background-size 0.3s ease;
+  background-image: linear-gradient(90deg, #5b86e5, #7c5ce7);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+#recent-posts .recent-post-info .article-title:hover {
+  background-size: 100% 2px;
+}
