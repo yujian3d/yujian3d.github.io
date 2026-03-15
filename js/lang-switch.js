@@ -314,8 +314,16 @@
     });
 
     // 19. Page articles title (archives page)
-    document.querySelectorAll('#page .article-sort-title').forEach(function (el) {
+    document.querySelectorAll('#archive .article-sort-title').forEach(function (el) {
       var text = el.textContent.trim();
+      var match = text.match(/^(.+?)\s*-\s*(\d+)$/);
+      if (match) {
+        var label = match[1].trim();
+        var count = match[2];
+        if (label === '全部文章' || label === 'All Articles') {
+          el.textContent = t.pageArticles + ' - ' + count;
+        }
+      }
       if (text === '全部文章' || text === 'All Articles') {
         el.textContent = t.pageArticles;
       }
