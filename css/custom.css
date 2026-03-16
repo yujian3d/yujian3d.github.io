@@ -6,7 +6,7 @@
 
 /* ===== 1. PC端加宽内容区域，减少两侧空白 ===== */
 .layout {
-  max-width: 1800px;
+  max-width: 2200px;
 }
 
 @media screen and (min-width: 2000px) {
@@ -17,12 +17,12 @@
 
 /* 隐藏aside时也相应加宽 */
 .layout.hide-aside {
-  max-width: 1200px;
+  max-width: 2200px;
 }
 
 @media screen and (min-width: 2000px) {
   .layout.hide-aside {
-    max-width: 1500px;
+    max-width: 65%;
   }
 }
 
